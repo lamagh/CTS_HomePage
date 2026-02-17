@@ -1,0 +1,176 @@
+.contactSection {
+  position: relative;
+  height: 813px;
+  overflow: hidden;
+  color: var(--white-color);
+}
+
+.contactSection > img,
+.contactSection > video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.contactSectionCont {
+  height: calc(100% - 24vh);
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 12vh 5vw;
+}
+
+.contactSectionHeader > p {
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 90px;
+  text-transform: uppercase;
+  margin-bottom: 26px;
+}
+
+.contactSectionHeader > h2 {
+  font-size: 56px;
+  line-height: 90px;
+  font-weight: 400;
+}
+
+.contactSectionHeader > h2 > span {
+  border-bottom: 3px solid var(--white-color);
+}
+
+.contactSectionHeader > .biggerHeader {
+  font-size: 88px;
+}
+
+.contactSectionHeader > .biggerHeader > span {
+  border-bottom: 5px solid var(--white-color);
+}
+
+.contactSectionLowerBox {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 5%;
+}
+
+.contactSectionLowerBox > p {
+  width: 55%;
+  display: inline-block;
+  font-weight: 400;
+  color: var(--white-transparent-1);
+  font-size: 18px;
+  line-height: 30px;
+}
+
+.separator {
+  width: 1px;
+  height: 80%;
+  background-color: var(--white-transparent-2);
+}
+
+/* 
+-----------------
+Adjust for Tablet
+-----------------
+*/
+@media screen and (max-width: 1200px) {
+  .contactSectionHeader > .biggerHeader {
+    font-size: 80px;
+    line-height: 80px;
+  }
+
+  .contactSectionHeader > .biggerHeader > span {
+    border-bottom: 4px solid var(--white-color);
+  }
+
+  .contactSectionLowerBox > p {
+    font-size: 16px;
+    line-height: 26px;
+  }
+}
+
+/* 
+--------------------------
+Adjust for vertical Tablet
+--------------------------
+*/
+@media screen and (max-width: 1000px) {
+  .contactSectionCont {
+    height: calc(100% - 16vh);
+    padding: 8vh 5vw;
+  }
+
+  .contactSectionHeader > h2 {
+    font-size: 50px;
+    line-height: 74px;
+  }
+
+  .contactSectionHeader > .biggerHeader {
+    font-size: 64px;
+    line-height: 64px;
+  }
+
+  .contactSectionLowerBox > p {
+    font-size: 16px;
+  }
+
+  .separator {
+    height: 100%;
+  }
+}
+
+/* 
+-----------------
+Adjust for Mobile
+-----------------
+*/
+@media screen and (max-width: 800px) {
+  .contactSection {
+    height: 90vh;
+  }
+
+  .contactSectionCont {
+    padding: 5vh 5vw;
+  }
+
+  .contactSectionHeader > p {
+    font-size: 1rem;
+    margin: 8% 0;
+  }
+
+  .contactSectionHeader > h2 {
+    font-size: 2.5rem;
+    line-height: 1.6;
+  }
+
+  .contactSectionHeader > h2 > span {
+    border-bottom: 2px solid var(--white-color);
+  }
+
+  .contactSectionHeader > .biggerHeader {
+    font-size: 28px;
+  }
+
+  .contactSectionHeader > .biggerHeader > span {
+    border-bottom: 3px solid var(--white-color);
+  }
+
+  .contactSectionLowerBox {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-top: 8rem;
+  }
+
+  .contactSectionLowerBox > p {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .separator {
+    width: 90vw;
+    height: 1px;
+  }
+}

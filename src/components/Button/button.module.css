@@ -1,0 +1,88 @@
+.btn {
+  width: fit-content;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 1.4rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border-radius: var(--border-radius);
+  transition: var(--transition-2);
+}
+.btn > img {
+  width: 18px;
+  transition: var(--transition-2);
+}
+
+.style1 {
+  color: var(--primary-color);
+  background-color: var(--white-color);
+  border: 1.5px solid var(--white-color);
+}
+.style1:hover {
+  color: var(--white-color);
+  background-color: var(--primary-color);
+}
+.style1:hover > img {
+  filter: var(--filter-white);
+}
+
+.style2 {
+  color: var(--white-color);
+  background-color: var(--primary-color);
+  border: 1.5px solid var(--primary-color);
+  transition: var(--transition-2);
+}
+.style2 > img {
+  filter: var(--filter-white);
+}
+.style2:hover {
+  color: var(--primary-color);
+  background-color: transparent;
+}
+.style2:hover > img {
+  filter: none;
+}
+
+.style3 {
+  margin-top: 32px;
+
+  /* To remove when sure that we chose first style for btns
+
+  width: fit-content;
+  justify-content: flex-start;
+  gap: 10px;
+  font-size: 16px;
+  padding: 15px 20px; */
+  color: var(--primary-color);
+  background-color: transparent;
+  border: 1px solid var(--primary-color);
+}
+.style3:hover {
+  color: var(--white-color);
+  background-color: var(--primary-color);
+}
+.style3:hover > img {
+  filter: var(--filter-white);
+}
+.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* 
+-----------------
+Adjust for Mobile
+-----------------
+*/
+@media screen and (max-width: 800px) {
+  .btn {
+    padding: 0.9rem 2.5rem;
+  }
+
+  /* .style3 {
+    padding: 15px 20px;
+  } */
+}

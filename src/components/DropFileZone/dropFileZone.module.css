@@ -1,0 +1,82 @@
+.videoContentContainer {
+  width: calc(100%);
+}
+
+.noDefaultImage {
+  width: fit-content;
+}
+
+.uploadContainer {
+  height: 180px;
+  pointer-events: none;
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  gap: 10px;
+  border-radius: 12px;
+  background-color: #fafafa;
+}
+
+.noDefaultImage .uploadContainer {
+  width: 15rem;
+}
+
+.uploadContainer > p {
+  text-align: center;
+  line-height: 20px;
+}
+
+.uploadContainer > p > span {
+  text-decoration: underline;
+  font-weight: 500;
+  color: #0364fc;
+  pointer-events: all;
+  cursor: pointer;
+}
+
+.editModeContainer {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* gap: 20px; */
+  border-radius: 10px;
+  border: 1px dashed #c1c1c1;
+}
+
+.isDragActive {
+  border: 2px dashed #6a6a6a;
+  background-color: #fdfdfd;
+}
+
+.divider {
+  height: 110px;
+  width: 1px;
+  background-color: #eee;
+}
+
+.videoContentContainer > video {
+  width: 20%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.videoContentContainer > img {
+  width: 20%;
+  border-radius: 5px;
+  object-fit: contain;
+}
+
+.editModeContainer > video {
+  width: 45%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.editModeContainer > img {
+  width: 45%;
+  height: 180px;
+}

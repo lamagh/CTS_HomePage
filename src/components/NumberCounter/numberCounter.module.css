@@ -1,0 +1,62 @@
+.container {
+  border-top: 1px solid var(--primary-color);
+}
+
+.container p.kpiMetric {
+  font-size: 110px;
+  font-weight: 400;
+}
+
+.container p.kpiTitle {
+  font-size: 26px;
+  font-weight: 400;
+}
+
+/* 
+--------------------------
+Adjust for vertical Tablet
+--------------------------
+*/
+@media screen and (max-width: 1000px) {
+  .container p.kpiMetric {
+    font-size: 88px;
+  }
+
+  .container p.kpiTitle {
+    font-size: 18px;
+    font-weight: 400;
+  }
+}
+
+/* 
+-----------------
+Adjust for Mobile
+-----------------
+*/
+@media screen and (max-width: 800px) {
+  .container {
+    border-top: none;
+  }
+
+  .container > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-top: none;
+  }
+
+  .container p.kpiMetric {
+    font-size: 2rem;
+    font-weight: 500;
+  }
+
+  .container p.kpiTitle {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--black-transparent-1);
+    /* text-align: center; */
+    white-space: nowrap;
+  }
+}

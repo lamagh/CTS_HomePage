@@ -1,0 +1,173 @@
+.secondSection {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  padding: 14vh 5vw;
+}
+
+.secondSection > h2 {
+  font-size: 50px;
+  font-weight: 500;
+  line-height: 28px;
+}
+
+.secondSection > p {
+  width: 35%;
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 400;
+}
+
+.separator {
+  width: 100%;
+  height: 1px;
+  background-color: var(--primary-light-color);
+  border-radius: 30px;
+}
+
+.blogPostsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  column-gap: 90px;
+}
+
+.blogPostCard {
+  width: 45%;
+  color: #1e1e1e;
+  text-decoration: none;
+}
+
+.postCardImgBox {
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+}
+
+.postCardCont {
+  height: 14rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.postCardImgBox > img {
+  width: 100%;
+  height: 100%;
+  transition: var(--transition-1);
+  object-fit: cover;
+}
+
+.blogPostCardCont {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+}
+
+.blogPostCardCont > p {
+  text-transform: uppercase;
+}
+
+.blogPostCardCont > h3 {
+  text-transform: capitalize;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 38px;
+}
+
+.blogPostCardFooter {
+  position: relative;
+  height: 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 3%;
+  padding-bottom: 2%;
+}
+
+.blogPostCardFooter > img {
+  width: 25px;
+  margin-right: 8px;
+}
+
+.blogPostCardFooter::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  width: 100%;
+  height: 1.5px;
+  border-radius: var(--border-radius);
+  background-color: var(--grey-1);
+  transition: var(--transition-1);
+}
+
+.blogPostCardFooter::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  width: 0%;
+  height: 1.5px;
+  border-radius: var(--border-radius);
+  background-color: var(--dark-grey-1);
+  transition: var(--transition-1);
+}
+
+.blogPostCard:hover > .postCardImgBox > img {
+  transform: scale(1.1);
+}
+
+.blogPostCard:hover .blogPostCardFooter::after {
+  width: 100%;
+}
+
+/* 
+--------------------------
+Adjust for vertical Tablet
+--------------------------
+*/
+@media screen and (max-width: 1000px) {
+  .secondSection > p {
+    width: 55%;
+  }
+
+  .blogPostsContainer {
+    gap: 70px;
+    column-gap: 40px;
+  }
+
+  .blogPostCard {
+    width: 45%;
+  }
+
+  .blogPostCardCont > h3 {
+    font-size: 22px;
+    line-height: 30px;
+  }
+}
+
+/* 
+-----------------
+Adjust for Mobile
+-----------------
+*/
+@media screen and (max-width: 800px) {
+  .secondSection > h2 {
+    font-size: 38px;
+  }
+
+  .secondSection > p {
+    width: 100%;
+  }
+
+  .blogPostCard {
+    width: 100%;
+  }
+
+  .blogPostCardCont > h3 {
+    font-size: 24px;
+    line-height: 30px;
+  }
+}

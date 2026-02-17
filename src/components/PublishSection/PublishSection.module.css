@@ -1,0 +1,67 @@
+.secondColHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.secondColContent {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.publishBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 15px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  letter-spacing: 0.05rem;
+  width: 100%;
+  color: white;
+  border: 1px solid #0364fc;
+  background-color: #0364fc;
+  transition: var(--transition-3);
+}
+
+.publishBtn > img {
+  filter: var(--filter-white);
+}
+
+.publishBtn:hover {
+  color: #0364fc;
+  background-color: white;
+}
+
+.publishBtn:hover > img {
+  filter: none;
+}
+
+.publishBtn .progress {
+  color: white !important;
+}
+
+.publishBtn:hover .progress {
+  color: #0364fc !important;
+}
+
+.creationContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 18px;
+  column-gap: 10px;
+}
+
+.creationContent p {
+  font-size: 14px;
+  font-weight: 600;
+  color: #303030;
+}
+
+.creationContent span {
+  font-size: 13px;
+  font-weight: 400;
+  color: #747373;
+}

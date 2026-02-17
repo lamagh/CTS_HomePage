@@ -1,0 +1,68 @@
+.swiperSlide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.swiperSlideContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.swiperSlide img {
+  width: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+  height: 40rem;
+}
+
+.slideName,
+.slideRole {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--white-color);
+  text-align: center;
+}
+
+.swiperArrowLeft,
+.swiperArrowRight {
+  cursor: pointer;
+  border: 0;
+  background-color: transparent;
+  border-radius: 50%;
+  padding: 0;
+}
+
+.swiperArrowLeft {
+  left: 0;
+}
+
+.swiperArrowRight {
+  right: 0;
+}
+
+.swiperContainer {
+  display: flex;
+  gap: 2%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.customPagination {
+  position: relative !important;
+  margin-top: 20px !important;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+@media screen and (max-width: 450px) {
+  .swiperSlide img {
+    object-fit: contain;
+    height: 30rem;
+  }
+}

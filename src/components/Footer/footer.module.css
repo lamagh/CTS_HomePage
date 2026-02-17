@@ -1,0 +1,265 @@
+footer * {
+  box-sizing: border-box;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white-color);
+  background-color: var(--primary-color);
+}
+
+.logoBox {
+  padding: 8vh 5vw;
+  padding-bottom: 0;
+}
+
+.upperSection {
+  width: 100%;
+  display: flex;
+  gap: 10%;
+  padding: 8vh 5vw;
+  padding-bottom: 14vh;
+}
+
+.separator {
+  height: 1px;
+  width: 87vw;
+  border-radius: var(--border-radius);
+  background-color: var(--navy-blue-1);
+  transform: translateX(5vw);
+}
+
+.lowerSection {
+  display: flex;
+  justify-content: space-between;
+  white-space: nowrap;
+  font-size: 0.8rem;
+  padding: 18vh 5vw;
+  padding-top: 5vh;
+}
+
+.footerTxt {
+  width: 45%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.2rem;
+}
+
+.footerTxt h1 {
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 40px;
+}
+
+.footerTxt p {
+  font-size: 14px;
+  line-height: 19px;
+  font-weight: 400;
+}
+
+.newsletter {
+  width: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2%;
+}
+
+.newsletter > div > input,
+.newsletter > button {
+  font-size: 0.9rem;
+  padding: 3.2% 6%;
+  border-radius: var(--border-radius);
+  border: 0;
+}
+
+.newsletter > button {
+  font-weight: 400;
+  color: var(--primary-color);
+  background-color: var(--white-color);
+  border: 1.5px solid var(--white-color);
+  transition: var(--transition-2);
+}
+
+.newsletter > button:hover {
+  color: var(--white-color);
+  background-color: var(--primary-color);
+  transition: var(--transition-2);
+}
+
+.newsletter > div {
+  width: 65%;
+}
+
+.newsletter input {
+  width: 100%;
+  padding: 6% 5% !important;
+  margin-bottom: 12px;
+  color: var(--white-color);
+  background-color: var(--navy-blue-1);
+}
+
+.socialLinks {
+  display: flex;
+  margin-top: 6px;
+  gap: 2%;
+}
+
+.socialLinks a {
+  width: 26px;
+  height: 26px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1%;
+  border-radius: 50%;
+  background-color: var(--white-color);
+}
+
+.socialLinks img {
+  width: 80%;
+  height: 80%;
+}
+
+.sitemapLinks {
+  display: flex;
+  width: 100%;
+  gap: 5%;
+}
+
+.sitemapLinks li a {
+  text-decoration: none;
+  color: var(--white-color);
+}
+
+.copyright::before {
+  content: "";
+  top: 0;
+  width: 1.5px;
+  height: 100%;
+  margin-right: 5px;
+  border-radius: var(--border-radius);
+  float: left;
+  background-color: var(--navy-blue-1);
+}
+
+/* 
+--------------------------
+Adjust for vertical Tablet
+--------------------------
+*/
+@media screen and (max-width: 1000px) {
+  .logoBox {
+    padding-top: 6vh;
+  }
+
+  .upperSection {
+    padding-top: 5vh;
+    padding-bottom: 7vh;
+  }
+
+  .lowerSection {
+    padding-bottom: 12vh;
+  }
+}
+
+/* 
+-----------------
+Adjust for Mobile
+-----------------
+*/
+@media screen and (max-width: 800px) {
+  .upperSection {
+    flex-direction: column;
+    padding-top: 0;
+    padding: 0 7%;
+    padding-bottom: 8vh;
+    gap: 3rem;
+  }
+
+  .separator {
+    display: none;
+  }
+
+  .lowerSection {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 16vh;
+  }
+
+  .logoBox {
+    padding-top: 10%;
+    padding-bottom: 10%;
+  }
+
+  .logoBox > img {
+    width: 256px;
+  }
+
+  .footerTxt {
+    width: 61%;
+    gap: 1.5rem;
+  }
+
+  .footerTxt h1 {
+    display: none;
+  }
+
+  .footerTxt p {
+    font-size: 0.9rem;
+    font-weight: 500;
+    line-height: 1.5rem;
+  }
+
+  .socialLinks {
+    gap: 8px;
+  }
+
+  .socialLinks a {
+    width: 40px;
+    height: 40px;
+    background-color: var(--navy-blue-2);
+  }
+
+  .socialLinks img {
+    width: 14px;
+    filter: var(--filter-white);
+  }
+
+  .newsletter {
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .newsletter > div > input,
+  .newsletter > button {
+    width: 100%;
+    height: 3.2rem;
+    margin: 2% 0;
+    font-size: 1rem;
+  }
+
+  .newsletter > input {
+    background-color: var(--navy-blue-3);
+  }
+
+  .sitemapLinks {
+    justify-content: space-evenly;
+  }
+
+  .copyright {
+    font-size: 0.7rem;
+    margin-top: 10%;
+  }
+
+  .copyright::before {
+    display: none;
+  }
+}

@@ -1,0 +1,110 @@
+:root {
+  /* Colors */
+  --primary-color: #051d2e;
+  --primary-light-color: #051d2e33;
+  --primary-transparent-1: #051d2eb4;
+  --primary-transparent-2: #051d2e1a;
+  --primary-transparent-3: #051d2e7f;
+
+  --cms-nav-color: #f5f5f8;
+
+  --black-color: #000000;
+  --black-transparent-1: #1e1e1eb2;
+  --black-transparent-2: #000000b4;
+
+  --white-color: #ffffff;
+  --white-transparent-1: #ffffffb4;
+  --white-transparent-2: #ffffff1a;
+  --white-transparent-3: #ffffff50;
+
+  --navy-blue-1: #1e3342;
+  --navy-blue-2: #122939;
+  --navy-blue-3: #364956;
+
+  --navy-blue-transparent: #0e2b2f1a;
+
+  --blue-1: #0867f8;
+
+  --grey-1: #e5e8e9;
+  --dark-grey-1: #264044;
+
+  /* Filter colors (for SVG) */
+  --filter-white: brightness(0) saturate(100%) invert(98%) sepia(6%)
+    saturate(0%) hue-rotate(148deg) brightness(112%) contrast(101%);
+  --filter-white-trans: brightness(0) saturate(100%) invert(98%) sepia(6%)
+    saturate(0%) hue-rotate(148deg) brightness(112%) contrast(101%) opacity(0.3);
+  --filter-blue: brightness(0) saturate(100%) invert(27%) sepia(73%)
+    saturate(3636%) hue-rotate(211deg) brightness(98%) contrast(98%);
+  --filter-grey: brightness(0) saturate(100%) invert(54%) sepia(10%)
+    saturate(0%) hue-rotate(61deg) brightness(94%) contrast(94%);
+
+  /* Shapes */
+  --border-radius: 100px;
+
+  /* Transitions */
+  --transition-1: 0.5s ease-in-out all;
+  --transition-2: 0.4s ease-in-out all;
+  --transition-3: 0.2s ease-in-out all;
+  --transition-4: 0.3s ease-in-out all;
+}
+
+@font-face {
+  font-family: "HelveticaND";
+  src: local("HelveticaND"),
+    url(/assets/fonts/HelveticaNowDisplay-Light.ttf) format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "HelveticaND";
+  src: local("HelveticaND"),
+    url(/assets/fonts/HelveticaNowDisplay-Regular.ttf) format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "HelveticaND";
+  src: local("HelveticaND"),
+    url(/assets/fonts/HelveticaNowDisplay-Medium.ttf) format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "HelveticaND";
+  src: local("HelveticaND"),
+    url(/assets/fonts/HelveticaNowDisplay-Bold.ttf) format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+* {
+  font-family: HelveticaND;
+}
+
+button {
+  cursor: pointer;
+}
+
+.swiper-pagination {
+  position: relative !important;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.swiper-pagination-bullet {
+  cursor: pointer;
+  background-color: #051d2e2b;
+  display: block;
+  height: 10px;
+  width: 10px;
+  border-radius: 5px;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: var(--primary-color);
+}

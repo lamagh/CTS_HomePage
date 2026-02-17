@@ -1,0 +1,111 @@
+.container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+}
+.subContainer {
+  border-radius: 10px;
+  min-width: 350px;
+  padding: 20px;
+  border: 1px solid #dbdbdb;
+  background-color: #fcfcfc;
+}
+.text {
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+.title {
+  text-align: center;
+  font-size: 22px;
+  color: var(--primary-color);
+}
+.heading {
+  font-size: 1.4rem;
+  text-align: center;
+  margin-bottom: 0px;
+  margin-top: 22px;
+}
+.password {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.submit {
+  background-color: #0364fc;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  width: 100%;
+  border-radius: 5px;
+  padding: 15px;
+  border: 0;
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  transition: all 0.3s ease-in-out;
+}
+
+.submit:hover {
+  cursor: pointer;
+  background-color: #436978;
+}
+
+.accountLink {
+  margin-top: 8px;
+  font-size: small;
+  font-weight: bold;
+  text-align: center;
+  color: black;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.accountDiv {
+  display: flex;
+  justify-content: center;
+}
+.rememberContainer {
+  margin-bottom: 30px;
+}
+
+.errorMessage {
+  margin: 0;
+  color: red;
+  font-size: 13px;
+}
+
+.inputsCont {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.formCont {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 20px;
+}
+
+.subContainer2 {
+  min-width: 30%;
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.subContainer2 button.submit {
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  max-width: 50%;
+}
+
+.imageContainer {
+  display: flex;
+  justify-content: center;
+}

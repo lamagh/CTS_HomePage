@@ -1,0 +1,198 @@
+.secondSection,
+.thirdSection,
+.fourthSection,
+.fifthSection {
+  padding: 10vh 5vw;
+}
+
+.thirdSection {
+  padding-top: 2vh;
+}
+
+.secondSection,
+.thirdSection {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.secondSection > p,
+.thirdSection > p {
+  width: 75%;
+  font-size: 16px;
+  line-height: 23px;
+  font-weight: 400;
+}
+
+.productCards {
+  width: 100%;
+  display: grid;
+  column-gap: 3.5%;
+  flex-wrap: wrap;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.fourthSecTitle {
+  width: 45%;
+  font-size: 29px;
+  line-height: 37px;
+  font-weight: 400;
+  color: var(--primary-color);
+  padding-top: 20px;
+  padding-bottom: 4rem;
+}
+
+.servicesContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-wrap: wrap;
+  margin-bottom: 6rem;
+}
+
+.servicesContainer > div {
+  width: 30%;
+}
+
+.fourthSecBox {
+  display: flex;
+  justify-content: space-around;
+  height: 200px;
+  width: 100%;
+  background-color: var(--primary-color);
+  margin: 6rem 0;
+}
+
+.fourthSecBox > .boxSide {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+  align-items: center;
+}
+
+.fourthSecBox > .boxSide > .number {
+  font-size: 64px;
+  line-height: 70px;
+  font-weight: 500;
+  color: var(--white-color);
+}
+
+.fourthSecBox > .boxSide > div {
+  height: 30%;
+  width: 1px;
+  background-color: var(--white-transparent-2);
+}
+
+.fourthSecBox > .boxSide > .txt {
+  font-size: 16px;
+  line-height: 25px;
+  font-weight: 500;
+  color: var(--white-transparent-1);
+}
+
+.fourthSection {
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+}
+
+.fifthSection {
+  padding-top: 0;
+}
+
+.caseStudyContainer {
+  padding-top: 2.1rem;
+}
+
+/* 
+-----------------
+Adjust for Mobile
+-----------------
+*/
+@media screen and (max-width: 800px) {
+  .secondSection,
+  .thirdSection,
+  .fourthSection {
+    width: calc(100% - 10vw);
+    padding-bottom: 0;
+  }
+
+  .secondSection > p,
+  .thirdSection > p {
+    width: 100%;
+  }
+
+  .fourthSecTitle {
+    width: 90%;
+  }
+
+  .servicesContainer {
+    gap: 50px;
+  }
+
+  .productCards {
+    grid-template-columns: 1fr;
+  }
+
+  .servicesContainer > div {
+    width: 100%;
+  }
+
+  .fourthSecBox > .boxSide {
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0px;
+    padding: 10% 5%;
+  }
+
+  .fourthSecBox > .boxSide > .number {
+    font-size: 40px;
+  }
+
+  .fourthSecBox > .boxSide > div {
+    height: 0;
+    width: 0;
+  }
+
+  .fourthSecBox > .boxSide > .txt {
+    text-align: center;
+  }
+}
+
+/* 
+--------------------------
+Adjust for vertical Tablet
+--------------------------
+*/
+@media screen and (max-width: 1000px) {
+  .secondSection,
+  .thirdSection,
+  .fourthSection,
+  .fifthSection {
+    width: calc(100% - 10vw);
+    padding: 8vh 5vw;
+  }
+
+  .secondSection,
+  .thirdSection,
+  .fourthSection {
+    padding-bottom: 0;
+  }
+
+  .fifthSection {
+    padding-top: 0;
+  }
+
+  .fourthSecBox > .boxSide {
+    gap: 16px;
+  }
+
+  .fourthSecBox > .boxSide > .number {
+    font-size: 58px;
+    line-height: 64px;
+  }
+
+  .fourthSecBox > .boxSide > .txt {
+    font-size: 15px;
+  }
+}

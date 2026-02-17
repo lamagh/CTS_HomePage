@@ -1,0 +1,120 @@
+.firstSection {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.heroBackground {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: bottom;
+}
+
+.sectionContent {
+  top: 0;
+  left: 0;
+  width: 90vw;
+  height: calc(100% - 35vh);
+  position: absolute;
+  padding: 0 5vw;
+  padding-top: 22vh;
+  padding-bottom: 13vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.lowerSectionMain {
+  height: calc(100% - 28vh);
+}
+
+.upperSection {
+  display: flex;
+  flex-direction: column;
+}
+
+.mainSubTitle {
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--primary-color);
+}
+
+.mainTitle {
+  font-size: 78px;
+  font-weight: 400;
+  white-space: break-space;
+  margin-top: 20px;
+  line-height: 80px;
+  color: var(--primary-color);
+}
+
+.lowerSection {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+}
+
+.lowerSectionContent {
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 30px;
+  color: var(--black-transparent-2);
+  width: 50%;
+}
+.newsSection {
+  display: flex;
+  /* align-items: center; */
+  gap: 10px;
+  letter-spacing: 2px;
+  color: white;
+}
+.newsPrefix {
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: white;
+}
+
+/* 
+-----------------
+Adjust for Mobile
+-----------------
+*/
+@media screen and (max-width: 800px) {
+  .mainSubTitle {
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .mainTitle {
+    font-size: 34px;
+    line-height: 40px;
+  }
+
+  .lowerSection > a {
+    display: none;
+  }
+
+  .lowerSectionContent {
+    width: 99%;
+  }
+}
+
+.firstSection.darkMode p,
+.firstSection.darkMode h1,
+.firstSection.darkMode a,
+.firstSection.darkMode button {
+  color: white !important;
+}
+.arrowDownDiv {
+  align-self: flex-end;
+}
+.firstSection.darkMode .newsHeadline {
+  color: rgba(255, 255, 255, 0.8) !important;
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: uppercase;
+  
+}

@@ -1,0 +1,61 @@
+:root {
+  /* Temporary colors that can be later added to 'index.css' if needed */
+  --title-color: #13283b;
+  --subtitle-color: #13263a;
+  --content-color: #101010;
+}
+
+.caseStudiesSection {
+  padding: 8vh 3vw;
+}
+
+.caseStudy h2 {
+  font-size: 1.8rem;
+  color: var(--subtitle-color);
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.caseStudy h3 {
+  font-size: 1.4rem;
+  color: var(--subtitle-color);
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.caseStudy h4 {
+  font-size: 1.2rem;
+  color: var(--subtitle-color);
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.caseStudy p {
+  font-size: 20px;
+  color: var(--content-color);
+  line-height: 1.6;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.caseStudy ul {
+  list-style: disc;
+  padding-left: 2rem;
+
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: var(--content-color);
+}
+.caseStudy li {
+  list-style: disc;
+
+  font-size: 20px;
+  color: var(--content-color);
+  margin-bottom: 10px;
+}
+
+@media screen and (max-width: 450px) {
+  .caseStudiesSection {
+    padding: 6vh 5vw;
+  }
+}

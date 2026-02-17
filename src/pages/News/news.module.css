@@ -1,0 +1,40 @@
+.secondSection {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  padding: 14vh 3vw;
+}
+
+.swiper {
+  background-color: var(--primary-color);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.swiperArrowLeft,
+.swiperArrowRight {
+  cursor: pointer;
+  border: 0;
+  background-color: transparent;
+  border-radius: 50%;
+  padding: 0;
+}
+
+.swiperArrowLeft {
+  left: 0;
+}
+
+.swiperArrowRight {
+  right: 0;
+}
+
+.swiperSlide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swiperSlide > img {
+  height: 40rem;
+  object-fit: contain;
+}

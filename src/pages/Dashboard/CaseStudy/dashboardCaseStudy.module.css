@@ -1,0 +1,21 @@
+.tableContainer {
+  overflow: hidden;
+  border-radius: 6px;
+  border: 1px solid #ebebeb;
+  margin-right: 2rem;
+}
+
+.mainTitle {
+  font-size: 25px;
+  font-weight: 500;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.mainTitle a {
+  color: var(--primary-color);
+}
+
+.mainTitle a:first-of-type {
+  text-decoration: underline;
+}
