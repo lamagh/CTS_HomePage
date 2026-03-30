@@ -1,5 +1,6 @@
-import { useState, useEffect, useMemo, useCallback } from "react";
+import { useState, useEffect, useMemo, useCallback } from 'react';
 
+const API_BASE_URL = import.meta.env.VITE_BACKEND_URL;
 function useLoadingData(pageName) {
   const [content, setContent] = useState(null);
   const [isMediaLoading, setIsMediaLoading] = useState(true);
@@ -13,15 +14,15 @@ function useLoadingData(pageName) {
         [item.htmlElementId]: { ...item },
       })),
       {
-        pageSuccessStories: [
-          ...data.pageSuccessStories.map((item) => item.successStory),
-        ],
+        pageSuccessStories: data.pageSuccessStories.map(
+          (item) => item.successStory,
+        ),
       },
       {
-        pageProducts: [...data.pageProducts.map((item) => item.product)],
+        pageProducts: data.pageProducts.map((item) => item.product),
       },
       {
-        pageServices: [...data.pageServices.map((item) => item.service)],
+        pageServices: data.pageServices.map((item) => item.service),
       },
     ].reduce((acc, item) => {
       const key = Object.keys(item)[0];
@@ -31,40 +32,45 @@ function useLoadingData(pageName) {
   }, []);
 
   useEffect(() => {
-    if (!pageName) {
-      return;
-    }
+    if (!pageName) return;
 
     let isMounted = true;
+    setIsMediaLoading(true);
 
-    fetch(`/api/Pages/${pageName}/content`, {
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((resp) => {
-        if (!resp.ok) {
-          throw new Error(resp.statusText);
+    const loadContent = async () => {
+      try {
+        const response = await fetch(
+          `${API_BASE_URL}/Pages/${pageName}/content`,
+          {
+            headers: {
+              'Content-Type': 'application/json',
+            },
+          },
+        );
+
+        if (!response.ok) {
+          throw new Error(`Request failed: ${response.status}`);
         }
-        return resp.json();
-      })
-      .then((data) => {
+
+        const data = await response.json();
+
         if (isMounted) {
           const processedContent = processContent(data);
           setContent(processedContent);
         }
-      })
-      .catch((error) => {
+      } catch (error) {
         if (isMounted) {
-          setIsMediaLoading(true);
-          console.error("Error loading content:", error);
+          setContent(null);
+          console.error('Error loading content:', error);
         }
-      })
-      .finally(() => {
+      } finally {
         if (isMounted) {
           setIsMediaLoading(false);
         }
-      });
+      }
+    };
+
+    loadContent();
 
     return () => {
       isMounted = false;
