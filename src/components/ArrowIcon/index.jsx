@@ -1,16 +1,18 @@
-import { arrowRight } from "../../constants/assets";
-import styles from "./arrowIcon.module.css";
+import { arrowRight } from '../../constants/assets';
+import styles from './arrowIcon.module.css';
 
-function ArrowIcon({ direction, color }) {
+function ArrowIcon({ direction, color, onClick }) {
   return (
     <div
-      className={`${styles.icon} ${direction == "down" ? styles.downDir : ""} ${
-        direction == "up" ? styles.upDir : ""
-      } ${direction == "left" ? styles.leftDir : ""} ${
-        color == "white" ? styles.whiteCol : ""
+      onClick={onClick}
+      className={`${styles.icon} ${direction == 'down' ? styles.downDir : ''} ${
+        direction == 'up' ? styles.upDir : ''
+      } ${direction == 'left' ? styles.leftDir : ''} ${
+        color == 'white' ? styles.whiteCol : ''
       }`}
+      style={{ cursor: onClick ? 'pointer' : 'default' }}
     >
-      <img src={arrowRight} alt="right arrow" />
+      <img src={arrowRight} alt='right arrow' />
     </div>
   );
 }

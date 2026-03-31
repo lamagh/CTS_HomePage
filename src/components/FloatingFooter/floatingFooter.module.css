@@ -39,11 +39,11 @@
   color: var(--white-color);
 }
 
-.contactBtn {
+.linksCont li:has(.activeLink) {
   background-color: #ffffff99;
 }
 
-.contactBtn > a {
+.activeLink {
   color: var(--primary-color) !important;
 }
 

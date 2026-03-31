@@ -1,23 +1,24 @@
-import { useEffect, useState } from "react";
-import HeroSection from "../../components/HeroSection";
-import styles from "./testimonials.module.css";
-import LoadingScreen from "../../components/LoadingScreen";
-import dayjs from "dayjs";
-import useLoadingData from "../../hooks/useLoadingData";
+import { useEffect, useState } from 'react';
+import HeroSection from '../../components/HeroSection';
+import styles from './testimonials.module.css';
+import LoadingScreen from '../../components/LoadingScreen';
+import dayjs from 'dayjs';
+import useLoadingData from '../../hooks/useLoadingData';
 
 function Testimonials() {
   const [testimonials, setTestimonials] = useState([]);
-  const [content, isMediaLoading, setIsMediaLoading] = useLoadingData("media");
+  const [content, isMediaLoading, setIsMediaLoading] = useLoadingData('media');
   const [isInfoLoading, setIsInfoLoading] = useState(false);
+  const API_BASE_URL = import.meta.env.VITE_BACKEND_URL;
 
   const fetchInfo = async () => {
     try {
       setIsInfoLoading(true);
-      const url = `/api/Testimonials`;
+      const url = `${API_BASE_URL}/Testimonials`;
 
       const res = await fetch(url, {
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
       });
 
@@ -33,6 +34,8 @@ function Testimonials() {
     }
   };
 
+  console.log('testimonials: ', testimonials);
+
   useEffect(() => {
     fetchInfo();
   }, []);
@@ -41,36 +44,44 @@ function Testimonials() {
     <>
       {(isMediaLoading || isInfoLoading) && <LoadingScreen />}
       <HeroSection
-        prefix={""}
-        headline={""}
-        description={""}
+        prefix={''}
+        headline={''}
+        description={''}
         isDarkMode={true}
         image={content?.media_section2_image4.text}
-        onClick={() => console.log("Demo clicked")}
+        onClick={() => console.log('Demo clicked')}
         bool={false}
       />
       <section className={styles.testimonialsSection}>
-        {testimonials.map((testimonial, index) => (
-          <div key={index} className={styles.testimonial}>
-            <h3>
-              Testimonial <span>{index + 1}</span>
-            </h3>
-            <p className={styles.quote}>
-              "{testimonial.body}",{" "}
-              {dayjs(testimonial.date).format("DD MM YYYY")}
-            </p>
-            <div className={styles.author}>
-              <p className={styles.name}>{testimonial.fullName}</p>
-              {testimonial.position && (
-                <p className={styles.position}>{testimonial.position}</p>
-              )}
-              {testimonial.company && (
-                <p className={styles.company}>{testimonial.company}</p>
-              )}
-            </div>
-            <hr className={styles.titleUnderline} />
-          </div>
-        ))}
+        <div className={styles.testimonialsContainer}>
+          {testimonials.map((testimonial, index) => (
+            <article key={index} className={styles.testimonial}>
+              <div className={styles.testimonialHeader}>
+                <h3>
+                  Testimonial <span>{index + 1}</span>
+                </h3>
+              </div>
+
+              <p className={styles.quote}>"{testimonial.body}"</p>
+
+              <div className={styles.author}>
+                <p className={styles.name}>{testimonial.fullName}</p>
+
+                {(testimonial.position || testimonial.company) && (
+                  <p className={styles.meta}>
+                    {testimonial.position}
+                    {testimonial.position && testimonial.company ? ' • ' : ''}
+                    {testimonial.company}
+                  </p>
+                )}
+
+                <p className={styles.date}>
+                  {dayjs(testimonial.date).format('DD MM YYYY')}
+                </p>
+              </div>
+            </article>
+          ))}
+        </div>
       </section>
     </>
   );

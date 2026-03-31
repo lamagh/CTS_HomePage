@@ -1,22 +1,23 @@
-import HeroSection from "../../components/HeroSection";
-import CustomSwiper from "../../components/CustomSwiper";
-import styles from "./blogs.module.css";
-import { useEffect, useState } from "react";
-import LoadingScreen from "../../components/LoadingScreen";
-import dayjs from "dayjs";
+import HeroSection from '../../components/HeroSection';
+import CustomSwiper from '../../components/CustomSwiper';
+import styles from './blogs.module.css';
+import { useEffect, useState } from 'react';
+import LoadingScreen from '../../components/LoadingScreen';
+import dayjs from 'dayjs';
 
 function Blogs() {
   const [blogs, setBlogs] = useState([]);
   const [isMediaLoading, setIsMediaLoading] = useState(false);
+  const API_BASE_URL = import.meta.env.VITE_BACKEND_URL;
 
   const fetchInfo = async () => {
     try {
       setIsMediaLoading(true);
-      const url = `/api/Blogs?t=100&p=1&isRecent=true`;
+      const url = `${API_BASE_URL}/Blogs?t=100&p=1&isRecent=true`;
 
       const res = await fetch(url, {
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
       });
 
@@ -39,7 +40,7 @@ function Blogs() {
   return (
     <>
       {isMediaLoading && <LoadingScreen />}
-      <div style={{ height: "5rem" }}></div>
+      <div style={{ height: '5rem' }}></div>
       {blogs.map((section, index) => (
         <section className={styles.secondSection} key={index}>
           <div className={styles.title}>

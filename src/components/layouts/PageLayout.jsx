@@ -1,8 +1,8 @@
-import MainHeader from "../MainHeader";
-import Body from "../Body";
-import FloatingFooter from "../FloatingFooter";
-import Footer from "../Footer";
-import { Outlet } from "react-router-dom";
+import MainHeader from '../MainHeader';
+import Body from '../Body';
+import FloatingFooter from '../FloatingFooter';
+import Footer from '../Footer';
+import { Outlet } from 'react-router-dom';
 
 function PageLayout() {
   return (

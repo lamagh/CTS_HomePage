@@ -1,31 +1,32 @@
-import { useState } from "react";
-import { footerLogo } from "../../constants/assets";
+import { useState } from 'react';
+import { footerLogo } from '../../constants/assets';
 
-import styles from "./footer.module.css";
-import Button from "../Button";
-import useLoadingData from "../../hooks/useLoadingData";
+import styles from './footer.module.css';
+import Button from '../Button';
+import useLoadingData from '../../hooks/useLoadingData';
 
 function Footer() {
-  const [content, isMediaLoading, setIsMediaLoading] = useLoadingData("footer");
+  const [content, isMediaLoading, setIsMediaLoading] = useLoadingData('footer');
 
   const [formData, setFormData] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [message, setMessage] = useState({ message: "", color: "" });
+  const [message, setMessage] = useState({ message: '', color: '' });
+  const API_BASE_URL = import.meta.env.VITE_BACKEND_URL;
 
   const socialLinks = [
     {
-      name: "linkedin",
-      src: "/assets/socialIcons/linkedin.svg",
+      name: 'linkedin',
+      src: '/assets/socialIcons/linkedin.svg',
       href: content?.footer_section1_linkedin?.text,
     },
     {
-      name: "facebook",
-      src: "/assets/socialIcons/facebook.svg",
+      name: 'facebook',
+      src: '/assets/socialIcons/facebook.svg',
       href: content?.footer_section1_facebook?.text,
     },
     {
-      name: "instagram",
-      src: "/assets/socialIcons/instagram.svg",
+      name: 'instagram',
+      src: '/assets/socialIcons/instagram.svg',
       href: content?.footer_section1_instagram?.text,
     },
   ];
@@ -35,40 +36,43 @@ function Footer() {
 
     if (!/^[\w-.]+@[\w-]+\.[a-z]{2,}$/i.test(formData)) {
       setMessage({
-        message: "Invalid email.",
-        color: "red",
+        message: 'Invalid email.',
+        color: 'red',
       });
       return;
     }
 
     try {
       setLoading(true);
-      const response = await fetch(`/api/Forms/subscribe-newsletter`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      const response = await fetch(
+        `${API_BASE_URL}/forms/subscribe-newsletter`,
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            email: formData,
+          }),
         },
-        body: JSON.stringify({
-          email: formData,
-        }),
-      });
+      );
 
       if (response.ok) {
-        setMessage({ message: "Subscribed to news letter!", color: "green" });
+        setMessage({ message: 'Subscribed to news letter!', color: 'green' });
         setFormData(null);
       } else {
         setMessage({
           message:
-            "Failed to subscribe to news letter. Please try again later.",
-          color: "red",
+            'Failed to subscribe to news letter. Please try again later.',
+          color: 'red',
         });
       }
     } catch (error) {
       setMessage({
-        message: "Failed to subscribe to news letter. Please try again later.",
-        color: "red",
+        message: 'Failed to subscribe to news letter. Please try again later.',
+        color: 'red',
       });
-      console.error("Error:", error);
+      console.error('Error:', error);
     } finally {
       setLoading(false);
     }
@@ -77,7 +81,7 @@ function Footer() {
   return (
     <footer>
       <div className={styles.logoBox}>
-        <img src={footerLogo} alt="cts-logo" width={200} height="auto" />
+        <img src={footerLogo} alt='cts-logo' width={200} height='auto' />
       </div>
       <div className={styles.upperSection}>
         <div className={styles.footerTxt}>
@@ -86,7 +90,7 @@ function Footer() {
           <div className={styles.socialLinks}>
             {socialLinks.map((elem, i) => (
               <a key={i} href={elem.href}>
-                <img src={elem.src} alt={elem.name + "-icon"} />
+                <img src={elem.src} alt={elem.name + '-icon'} />
               </a>
             ))}
           </div>
@@ -96,8 +100,8 @@ function Footer() {
             <input
               value={formData}
               onChange={(e) => setFormData(e.target.value)}
-              type="email"
-              placeholder="Enter your email"
+              type='email'
+              placeholder='Enter your email'
               required
             />
             {message && (
@@ -118,19 +122,19 @@ function Footer() {
       <div className={styles.lowerSection}>
         <ul className={styles.sitemapLinks}>
           <li>
-            <a href="/">Home</a>
+            <a href='/'>Home</a>
           </li>
           <li>
-            <a href="/about">About us</a>
+            <a href='/about'>About us</a>
           </li>
           <li>
-            <a href="/products">Products</a>
+            <a href='/products'>Products</a>
           </li>
           <li>
-            <a href="/media">Media</a>
+            <a href='/media'>Media</a>
           </li>
           <li>
-            <a href="/contact">Contact us</a>
+            <a href='/contact'>Contact us</a>
           </li>
         </ul>
         <div className={styles.copyright}>

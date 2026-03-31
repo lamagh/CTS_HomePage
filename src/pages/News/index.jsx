@@ -1,21 +1,22 @@
-import HeroSection from "../../components/HeroSection";
-import styles from "./news.module.css";
-import { Helmet } from "react-helmet-async";
-import CustomSwiper from "../../components/CustomSwiper";
-import LoadingScreen from "../../components/LoadingScreen";
-import { useEffect, useState } from "react";
+import HeroSection from '../../components/HeroSection';
+import styles from './news.module.css';
+import { Helmet } from 'react-helmet-async';
+import CustomSwiper from '../../components/CustomSwiper';
+import LoadingScreen from '../../components/LoadingScreen';
+import { useEffect, useState } from 'react';
 
 function NewsPage() {
   const [news, setNews] = useState([]);
   const [isMediaLoading, setIsMediaLoading] = useState(false);
+  const API_BASE_URL = import.meta.env.VITE_BACKEND_URL;
 
   const fetchInfo = async () => {
     try {
-      const url = `/api/News`;
+      const url = `${API_BASE_URL}/News`;
 
       const res = await fetch(url, {
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
       });
 
@@ -47,7 +48,7 @@ function NewsPage() {
           slides={news.map((news) => ({
             img: news.imageUrl,
           }))}
-          backgroundColor="#051d2e"
+          backgroundColor='#051d2e'
           pagination={false}
         />
       </section>
