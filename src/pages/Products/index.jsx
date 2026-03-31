@@ -1,7 +1,7 @@
-import FadeUpEffect from "../../components/FadeUpEffect";
-import ProductSummaryCard from "../../components/ProductSummaryCard/index.jsx";
-import ServiceCard from "../../components/ServiceCard/index.jsx";
-import HomeHeroSection from "../../components/HomeHeroSection/index.jsx";
+import FadeUpEffect from '../../components/FadeUpEffect';
+import ProductSummaryCard from '../../components/ProductSummaryCard/index.jsx';
+import ServiceCard from '../../components/ServiceCard/index.jsx';
+import HomeHeroSection from '../../components/HomeHeroSection/index.jsx';
 import {
   aiducatorLogo,
   area9Logo,
@@ -17,45 +17,45 @@ import {
   serviceTwo,
   serviceThree,
   oneIdentityLogo,
-} from "../../constants/assets.js";
-import styles from "./products.module.css";
-import "swiper/css";
-import { Helmet } from "react-helmet-async";
-import useLoadingData from "../../hooks/useLoadingData.js";
-import LoadingScreen from "../../components/LoadingScreen/index.jsx";
-import { lazy, useMemo } from "react";
+} from '../../constants/assets.js';
+import styles from './products.module.css';
+import 'swiper/css';
+import { Helmet } from 'react-helmet-async';
+import useLoadingData from '../../hooks/useLoadingData.js';
+import LoadingScreen from '../../components/LoadingScreen/index.jsx';
+import { lazy, useMemo } from 'react';
 
-const EndSection = lazy(() => import("../../components/EndSection"));
-const TitleAndSeparator = lazy(() =>
-  import("../../components/TitleAndSeparator")
+const EndSection = lazy(() => import('../../components/EndSection'));
+const TitleAndSeparator = lazy(
+  () => import('../../components/TitleAndSeparator'),
 );
 
 function ProductsPage() {
   const [content, isMediaLoading, setIsMediaLoading] =
-    useLoadingData("products");
+    useLoadingData('products');
 
   const handleLink = (slug) => {
-    if (slug == "aiducator") {
-      return "/products/aiducator";
-    } else if (slug == "bilarabi") {
-      return "https://www.myarabic.ae/bilarabi/ar/";
+    if (slug == 'aiducator') {
+      return '/products/aiducator';
+    } else if (slug == 'bilarabi') {
+      return 'https://www.myarabic.ae/bilarabi/ar/';
     }
 
-    return "/contact";
+    return '/contact';
   };
 
   const higherProducts = useMemo(
     () =>
       (content?.pageProducts || []).filter((e) =>
-        e.category.includes("Higher Education")
+        e.category.includes('Higher Education'),
       ),
-    [content?.pageProducts]
+    [content?.pageProducts],
   );
 
   const lowerProducts = useMemo(
     () =>
-      (content?.pageProducts || []).filter((e) => e.category.includes("K-12")),
-    [content?.pageProducts]
+      (content?.pageProducts || []).filter((e) => e.category.includes('K-12')),
+    [content?.pageProducts],
   );
 
   return (
@@ -75,7 +75,7 @@ function ProductsPage() {
 
       <section className={styles.secondSection}>
         <TitleAndSeparator title={content?.products_section2_title.text} />
-        <FadeUpEffect tag="p">
+        <FadeUpEffect tag='p'>
           {content?.products_section2_subtitle.text}
         </FadeUpEffect>
         <div className={styles.productCards}>
@@ -94,7 +94,7 @@ function ProductsPage() {
 
       <section className={styles.thirdSection}>
         <TitleAndSeparator title={content?.products_section2_title2.text} />
-        <FadeUpEffect tag="p">
+        <FadeUpEffect tag='p'>
           {content?.products_section2_subtitle2.text}
         </FadeUpEffect>
         <div className={styles.productCards}>
@@ -114,9 +114,9 @@ function ProductsPage() {
       <section className={styles.fourthSection}>
         <p className={styles.fourthSecSubTitle}>
           {content?.products_section3_title.text}
-          <img src={curvedSmallArrow} alt="curved down arrow" />
+          <img src={curvedSmallArrow} alt='curved down arrow' />
         </p>
-        <FadeUpEffect tag="h2" className={styles.fourthSecTitle}>
+        <FadeUpEffect tag='h2' className={styles.fourthSecTitle}>
           {content?.products_section3_subtitle.text}
         </FadeUpEffect>
         <div className={styles.servicesContainer}>
@@ -126,7 +126,7 @@ function ProductsPage() {
               img={e.mainImageUrl}
               title={e.title}
               description={e.description}
-              link={""}
+              link={''}
             />
           ))}
         </div>

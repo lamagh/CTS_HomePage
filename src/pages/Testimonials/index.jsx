@@ -34,8 +34,6 @@ function Testimonials() {
     }
   };
 
-  console.log('testimonials: ', testimonials);
-
   useEffect(() => {
     fetchInfo();
   }, []);

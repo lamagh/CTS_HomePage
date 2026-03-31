@@ -6,7 +6,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import { smallRightArrow, eduliticsBg } from '../../constants/assets';
+import { smallRightArrow } from '../../constants/assets';
 import styles from './aboutUs.module.css';
 import { lazy, useEffect, useRef, useState } from 'react';
 import useDisplay from '../../hooks/useDisplay';
@@ -59,53 +59,6 @@ function AboutUs() {
 
   const [isMobileDisplay] = useDisplay();
   const swiperRef = useRef();
-  const team = [
-    {
-      img: '/assets/team/1.jpg',
-      name: 'Bassem Chbaklo',
-      role: 'CEO',
-    },
-    {
-      img: '/assets/team/2.png',
-      name: 'Haissam Issa',
-      role: 'VP',
-    },
-    {
-      img: '/assets/team/5.jpg',
-      name: 'Abbas Bazzi',
-      role: 'Director of IT',
-    },
-    {
-      img: '/assets/team/4.jpg',
-      name: 'AbdulHafiz Kaissi',
-      role: 'COO',
-    },
-    {
-      img: '/assets/team/3.jpg',
-      name: 'Majed Mneymneh',
-      role: 'CGO',
-    },
-  ];
-
-  console.error(teamMembers);
-
-  const caseStudyCards = [
-    {
-      img: '/assets/productLogos/aiducator-new.jpg',
-      title: 'AI-Driven Solutions for Smarter Admissions',
-      desc: 'AI-powered chatbot that provides 24/7 support to prospective students and parents, delivering personalized assistance and enhancing school websites with modern, intuitive communication.',
-    },
-    {
-      img: '/assets/productLogos/bilarabi-bg.jpg',
-      title: 'Empowering Arabic Learning with Innovation',
-      desc: 'BilArabi is an Arabic language program designed to make learning enjoyable and meaningful.',
-    },
-    {
-      img: eduliticsBg,
-      title: 'Data-Driven Insights for Academic Excellence',
-      desc: 'EduLytics is a data-driven platform for educational institutions to integrate, cleanse, and analyze multi-source data.',
-    },
-  ];
 
   return (
     <>

@@ -15,6 +15,13 @@ function HeroSection({
   prefix,
   headline,
 }) {
+  const handleScrollToBottom = () => {
+    window.scrollTo({
+      top: document.documentElement.scrollHeight,
+      behavior: 'smooth',
+    });
+  };
+
   return (
     <section
       className={`${styles.firstSection} ${isDarkMode ? styles.darkMode : ''}`}
@@ -58,7 +65,11 @@ function HeroSection({
           </FadeUpEffect>
         </div>
         <div className={styles.arrowDownDiv}>
-          <ArrowIcon direction='down' color='white' />
+          <ArrowIcon
+            direction='down'
+            color='white'
+            onClick={handleScrollToBottom}
+          />
         </div>
       </div>
     </section>

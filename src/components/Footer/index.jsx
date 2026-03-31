@@ -89,7 +89,7 @@ function Footer() {
           <p>{content?.footer_section1_subtitle.text}</p>
           <div className={styles.socialLinks}>
             {socialLinks.map((elem, i) => (
-              <a key={i} href={elem.href}>
+              <a key={i} href={elem.href} target='_blank'>
                 <img src={elem.src} alt={elem.name + '-icon'} />
               </a>
             ))}
